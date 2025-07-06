@@ -1,7 +1,7 @@
 # breast_cancer_classifier.py
 
 import matplotlib
-matplotlib.use('Agg')  # ✅ Use non-GUI backend (fixes Tkinter error)
+matplotlib.use('Agg')  
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -27,8 +27,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # 5. Evaluate the model
-print("🎯 Accuracy:", accuracy_score(y_test, y_pred))
-print("\n📊 Classification Report:\n", classification_report(y_test, y_pred))
+print(" Accuracy:", accuracy_score(y_test, y_pred))
+print("\n Classification Report:\n", classification_report(y_test, y_pred))
 
 # 6. Confusion Matrix & Save
 cm = confusion_matrix(y_test, y_pred)
@@ -38,11 +38,11 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
             xticklabels=data.target_names, yticklabels=data.target_names)
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
-plt.title('🧪 Confusion Matrix')
+plt.title(' Confusion Matrix')
 plt.tight_layout()
 
 # Save to current directory
 output_path = os.path.join(os.getcwd(), "confusion_matrix.png")
 plt.savefig(output_path)
 plt.close()
-print(f"✅ Confusion matrix saved successfully as '{output_path}'")
+print(f" Confusion matrix saved successfully as '{output_path}'")
